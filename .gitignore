@@ -1,5 +1,4 @@
 .env
-populate-db.ts
 
 # Logs
 logs
