@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch & node dist/db/populate-db.js & node --watch dist/app.js",
-    "populate": "tsc --watch & node --watch dist/db/populate-db.js"
+    "populate": "tsc & node dist/db/populate-db.js",
+    "compile": "tsc --watch",
+    "start": "node --watch dist/app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
+    "express": "^4.21.0",
     "express-async-handler": "^1.2.0",
     "express-session": "^1.18.0",
     "passport": "^0.7.0",
