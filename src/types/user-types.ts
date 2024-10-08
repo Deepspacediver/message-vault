@@ -11,7 +11,7 @@ export type User = {
     last_name: string,
     password: string,
     role: UserRoles;
-    date_created: Date
+    created_at: Date
 }
 
 export type CreateUserRequest = {
@@ -19,5 +19,4 @@ export type CreateUserRequest = {
     firstName: string,
     lastName: string,
     password: string,
-    role: UserRoles;
 }

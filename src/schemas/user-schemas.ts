@@ -13,7 +13,6 @@ export const CreateUserSchema = z.object({
         userName: UserNameSchema,
         firstName: FirstNameSchema,
         lastName: LastNameSchema,
-        role: z.literal(UserRoles.USER),
         password: PasswordSchema,
     })
 });

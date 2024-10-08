@@ -5,8 +5,8 @@ import {changeUserRole, createUser} from "../db/user-queries.js";
 
 export const createUserPost = asyncHandler(async (req, res) => {
     schemaRequestParser(CreateUserSchema, req);
-    const {userName, firstName, lastName, role, password} = req.body;
-    const data = await createUser({userName, firstName, role, password, lastName});
+    const {userName, firstName, lastName, password} = req.body;
+    const data = await createUser({userName, firstName, password, lastName});
     res.json(data);
 });
 

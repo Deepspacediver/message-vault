@@ -7,13 +7,12 @@ export const createUser = async ({
                                      password,
                                      firstName,
                                      lastName,
-                                     role
                                  }: CreateUserRequest
 ): Promise<User> => {
     const {rows} = await db.query(`INSERT INTO users 
-            (user_name, password, first_name, last_name, role) 
-            VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-        [userName, password, firstName, lastName, role]);
+            (username, password, first_name, last_name, role) 
+            VALUES ($1, $2, $3, $4, 'user') RETURNING *`,
+        [userName, password, firstName, lastName]);
 
     return rows[0];
 };
