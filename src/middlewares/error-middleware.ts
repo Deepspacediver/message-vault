@@ -5,7 +5,7 @@ const getZodErrorMessages = (zodIssues: ZodIssue[]) => {
     return zodIssues.map(({message}) => message).join(", ");
 };
 
-export const errorMiddleware: ErrorRequestHandler = (err, req, res, next) => {
+export const errorMiddleware: ErrorRequestHandler = (err, _req, res, next) => {
     if (err instanceof ZodError) {
         const errorMessages = getZodErrorMessages(err.issues);
         res.status(400).json({error: errorMessages});
