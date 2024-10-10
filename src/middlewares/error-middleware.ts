@@ -1,23 +1,19 @@
 import {ErrorRequestHandler} from "express";
-import {ZodError, ZodIssue} from "zod";
+import {ZodIssue} from "zod";
+import BadRequestError from "../partials/bad-request-error.js";
 
-const getZodErrorMessages = (zodIssues: ZodIssue[]) => {
-    return zodIssues.map(({message}) => message).join(", ");
+export const getZodErrorMessages = (zodIssues: ZodIssue[]) => {
+    return zodIssues.map(({message}) => message);
 };
 
 export const errorMiddleware: ErrorRequestHandler = (err, _req, res, next) => {
-    if (err instanceof ZodError) {
-        const errorMessages = getZodErrorMessages(err.issues);
-        res.status(400).json({error: errorMessages});
+
+    if (err instanceof BadRequestError) {
+        res.render(err.viewFilePath, {errors: err.errors});
         return next();
     }
 
-    if (err instanceof Error) {
-        const errorMessage = err.message;
-        res.status(400).json({error: errorMessage});
-        return next();
-    }
-
+    //TODO: add error page
     res.status(500).json({error: 'Internal Server Error'});
     next();
 };
