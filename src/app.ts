@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from "express";
+import expressLayouts from "express-ejs-layouts";
 import {errorMiddleware} from "./middlewares/error-middleware.js";
 import path from "path";
 import signUpRouter from "./routes/sign-up-router.js";
@@ -14,6 +15,9 @@ app.use(express.urlencoded({extended: false}));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../src/views"));
+
+app.use(expressLayouts);
+
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/sign-up", signUpRouter);
