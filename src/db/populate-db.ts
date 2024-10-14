@@ -8,7 +8,7 @@ const SQL = `
         user_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
         first_name VARCHAR(15) CHECK(first_name <> ''),
         last_name VARCHAR(15) CHECK(last_name <> ''),
-        username VARCHAR(15) CHECK(username <> ''),
+        username VARCHAR(15) CHECK(username <> '') UNIQUE,
         password TEXT CHECK(password <> ''), 
         role TEXT CHECK(role IN ('user', 'admin', 'member')),
         created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
