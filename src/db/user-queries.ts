@@ -17,6 +17,16 @@ export const createUser = async ({
     return rows[0];
 };
 
+export const getUserByUsername = async (userName: string): Promise<User> => {
+    const {rows} = await db.query(`SELECT * FROM users WHERE username = $1`, [userName]);
+    return rows[0];
+};
+
+export const getUserById = async (userId: number): Promise<User> => {
+    const {rows} = await db.query(`SELECT * FROM users WHERE user_id = $1`, [userId]);
+    return rows[0];
+};
+
 export const changeUserRole = async (userId: number, role: 'admin' | 'member') => {
     await db.query(`UPDATE users SET role = $1 WHERE user_id = $2 RETURNING *`, [role, userId]);
 };
