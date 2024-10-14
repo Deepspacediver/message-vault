@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <ul>
+      <% !!locals.errors && locals.errors.map((err) => { %>
+          <li>
+             <%= err %>
+          </li>
+     <% }) %>
+    </ul>
+        <form method="POST" action="/sign-in">
+            <label for="userName">Username</label>
+            <input required name="userName" id="userName" type="text">
+
+            <label for="password">Password</label>
+            <input required name="password" id="password" type="password">
+
+            <button>Sing-in</button>
+        </form>
+    </div>
