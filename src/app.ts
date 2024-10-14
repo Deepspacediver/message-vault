@@ -13,6 +13,7 @@ import {getUserById} from "./db/user-queries.js";
 import {User as UserT} from "./types/user-types.js";
 import signInRouter from "./routes/sign-in-router.js";
 import passportConfig from "./configs/passport-config.js";
+import signOutRouter from "./routes/sign-out-router.js";
 
 declare global {
     namespace Express {
@@ -70,6 +71,7 @@ app.use((req, res, next) => {
 
 app.use("/sign-up", signUpRouter);
 app.use('/sign-in', signInRouter);
+app.use("/sign-out", signOutRouter);
 app.use("/users", userRouter);
 
 app.use(errorMiddleware);
