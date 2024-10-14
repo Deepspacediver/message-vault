@@ -1,14 +1,12 @@
-<html lang="">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign up for Message Vault</title>
-</head>
-<body>
-    <div>
-        <form method="POST" action="/users">
+<div class="wrapper">
+    <ul>
+      <% !!locals.errors && locals.errors.map((err) => { %>
+          <li>
+             <%= err %>
+          </li>
+     <% }) %>
+    </ul>
+        <form method="POST" action="/sign-up">
             <label for="firstName">First name</label>
             <input required name="firstName" id="firstName" type="text">
 
@@ -24,5 +22,3 @@
             <button>Submit</button>
         </form>
     </div>
-</body>
-</html>
