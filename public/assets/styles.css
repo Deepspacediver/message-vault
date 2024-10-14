@@ -42,6 +42,7 @@ body {
     border-color: var(--col-black);
     border-style: solid;
     margin: 0 auto;
+    padding: 5px 15px;
     min-height: calc(100% - var(--footer-height) - var(--header-height));
 }
 
@@ -81,7 +82,59 @@ a {
     list-style: none;
     justify-content: flex-end;
     padding: 0;
+}
 
+/*~~~~~~~~ Forms ~~~~~~~~*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*~~~~~~~~ Inputs ~~~~~~~~*/
+.label {
+    margin: 3px 0;
+}
+
+.input {
+    max-width: 300px;
+}
+
+/*~~~~~~~~ Buttons ~~~~~~~~*/
+.button {
+    width: 150px;
+    padding: 5px 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+}
+
+.button--submit {
+    margin: 15px auto;
+}
+
+/*~~~~~~~~ Sign in View ~~~~~~~~*/
+.sign-in-form {
+    width: 100%;
+}
+
+.sign-in-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*~~~~~~~~ Errors ~~~~~~~~*/
+.error-list {
+    display: flex;
+    flex-direction: column;
+    color: red;
+    font-size: 1rem;
+    gap: 2px;
+    padding-left: 0;
+    list-style: none;
+    margin: 10px 0;
 }
 
 /*~~~~~~~~ FOOTER ~~~~~~~~*/
