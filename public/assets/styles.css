@@ -90,6 +90,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 5px;
 }
 
 /*~~~~~~~~ Inputs ~~~~~~~~*/
@@ -108,10 +109,11 @@ a {
     margin: 0 auto;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .button--submit {
-    margin: 15px auto;
+    margin: 10px auto 0;
 }
 
 /*~~~~~~~~ Sign in View ~~~~~~~~*/
@@ -119,10 +121,14 @@ a {
     width: 100%;
 }
 
+
 .sign-in-form__form {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+}
+
+/*~~~~~~~~ Sign up View ~~~~~~~~*/
+.sign-up-form {
 }
 
 /*~~~~~~~~ Errors ~~~~~~~~*/
@@ -131,6 +137,7 @@ a {
     flex-direction: column;
     color: red;
     font-size: 1rem;
+    font-weight: 600;
     gap: 2px;
     padding-left: 0;
     list-style: none;

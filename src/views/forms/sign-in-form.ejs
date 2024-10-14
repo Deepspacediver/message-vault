@@ -5,9 +5,8 @@
         <input class="input" required name="userName" id="userName" type="text">
         <label class="label" for="password">Password</label>
         <input class="input" required name="password" id="password" type="password">
-        <button class="button button-submit">Sign in</button>
-    </form>
-    <% if(locals.errors) {%>
         <%-include('../partials/errors')%>
-    <%}%>
+        <button class="button button--submit">Sign in</button>
+    </form>
+
 </div>

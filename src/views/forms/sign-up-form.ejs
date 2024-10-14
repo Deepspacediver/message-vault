@@ -1,24 +1,16 @@
-<div class="wrapper">
-    <ul>
-      <% !!locals.errors && locals.errors.map((err) => { %>
-          <li>
-             <%= err %>
-          </li>
-     <% }) %>
-    </ul>
-        <form method="POST" action="/sign-up">
+        <form class="form sign-up-form" method="POST" action="/sign-up">
             <label for="firstName">First name</label>
-            <input required name="firstName" id="firstName" type="text">
+            <input class="input" required name="firstName" id="firstName" type="text">
 
             <label for="lastName">Last Name</label>
-            <input required name="lastName" id="lastName" type="text">
+            <input class="input" required name="lastName" id="lastName" type="text">
 
             <label for="userName">Username</label>
-            <input required name="userName" id="userName" type="text">
+            <input class="input" required name="userName" id="userName" type="text">
 
             <label for="password">Password</label>
-            <input required name="password" id="password" type="password">
+            <input class="input" required name="password" id="password" type="password">
 
-            <button>Submit</button>
+              <%-include('../partials/errors')%>
+            <button class="button button--submit">Submit</button>
         </form>
-    </div>
