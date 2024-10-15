@@ -1,0 +1,9 @@
+<% if(locals.errors && !!locals.errors.length)  {%>
+ <ul class="error-list">
+      <%locals.errors.map((err) => { %>
+          <li class="error-list__item">
+             &#x2022 <%= err %>
+          </li>
+     <% }) %>
+ </ul>
+<% }%>

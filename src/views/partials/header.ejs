@@ -1,0 +1,45 @@
+<header class="header">
+    <a class="header__link" href="/">
+        <h1 class="header__heading">Message vault</h1>
+    </a>
+    <nav class="header__nav">
+        <ul class="header__list">
+             <li>
+                <a href="/">
+                    Home
+                </a>
+            </li>
+        <% if(locals.isLogged) {%>
+            <% if(locals.isAuthorized) {%>
+                 <li>
+                     <a href="">
+                          Create post
+                      </a>
+                 </li>
+            <%} else {%>
+                 <li>
+                      <a href="">
+                        Become member
+                       </a>
+                 </li>
+            <%}%>
+            <li class="header__list-item">
+                <a href="/sign-out">
+                    Sign out
+                </a>
+            </li>
+        <%} else {%>
+            <li class="header__list-item">
+                <a href="/sign-in">
+                    Sign in
+                </a>
+            </li>
+            <li>
+                <a href="/sign-up">
+                    Sign up
+                </a>
+            </li>
+        <%}%>
+        </ul>
+    </nav>
+</header>

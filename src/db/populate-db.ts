@@ -6,19 +6,19 @@ const {Client} = pg;
 const SQL = `
     CREATE TABLE IF NOT EXISTS users (
         user_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
-        first_name VARCHAR(15) CHECK(firstName <> ''),
-        last_name VARCHAR(15) CHECK(lastName <> ''),
-        username VARCHAR(15) CHECK(username <> ''),
+        first_name VARCHAR(15) CHECK(first_name <> ''),
+        last_name VARCHAR(15) CHECK(last_name <> ''),
+        username VARCHAR(15) CHECK(username <> '') UNIQUE,
         password TEXT CHECK(password <> ''), 
         role TEXT CHECK(role IN ('user', 'admin', 'member')),
-        date_created DATE DEFAULT NOW()
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
     
     CREATE TABLE IF NOT EXISTS posts (
             post_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
             title VARCHAR( 50 ),
             content VARCHAR( 500 ),
-            date_created DATE DEFAULT NOW()
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
         );
         
    CREATE TABLE IF NOT EXISTS users_posts (

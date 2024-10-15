@@ -1,0 +1,151 @@
+/*~~~~~~~~ LAYOUT ~~~~~~~~*/
+:root {
+    --col-primary: #9EB2FA;
+    --col-white: #FFFF;
+    --col-black: #000000;
+
+    --header-height: 90px;
+    --footer-height: 60px;
+
+    --font-family: 'Lato';
+
+    --link-size: 12px;
+    --h1-size: 20px;
+}
+
+@media (min-width: 420px) {
+
+    :root {
+        --link-size: 16px;
+        --h1-size: 25px;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--col-primary);
+    color: var(--col-black);
+    height: 100%;
+    font-family: var(--font-family), serif;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    border-width: 0 1px;
+    border-color: var(--col-black);
+    border-style: solid;
+    margin: 0 auto;
+    padding: 5px 15px;
+    min-height: calc(100% - var(--footer-height) - var(--header-height));
+}
+
+/*~~~~~~~~ HEADER ~~~~~~~~*/
+
+.header {
+    height: var(--header-height);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header__heading {
+    font-size: var(--h1-size);
+}
+
+a {
+    text-decoration: none;
+    color: var(--col-black);
+}
+
+.header__link {
+    flex-basis: 45%;
+}
+
+.header__nav {
+    flex-basis: 55%;
+    font-size: var(--link-size);
+}
+
+.header__list {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    list-style: none;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+/*~~~~~~~~ Forms ~~~~~~~~*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+/*~~~~~~~~ Inputs ~~~~~~~~*/
+.label {
+    margin: 3px 0;
+}
+
+.input {
+    max-width: 300px;
+}
+
+/*~~~~~~~~ Buttons ~~~~~~~~*/
+.button {
+    width: 150px;
+    padding: 5px 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.button--submit {
+    margin: 10px auto 0;
+}
+
+/*~~~~~~~~ Sign in View ~~~~~~~~*/
+.sign-in-form {
+    width: 100%;
+}
+
+
+.sign-in-form__form {
+    display: flex;
+    flex-direction: column;
+}
+
+/*~~~~~~~~ Sign up View ~~~~~~~~*/
+.sign-up-form {
+}
+
+/*~~~~~~~~ Errors ~~~~~~~~*/
+.error-list {
+    display: flex;
+    flex-direction: column;
+    color: red;
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 2px;
+    padding-left: 0;
+    list-style: none;
+    margin: 10px 0;
+}
+
+/*~~~~~~~~ FOOTER ~~~~~~~~*/
+footer {
+    margin-top: auto;
+    height: var(--footer-height);
+}

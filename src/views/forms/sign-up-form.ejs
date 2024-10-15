@@ -1,0 +1,17 @@
+        <form class="form sign-up-form" method="POST" action="/sign-up">
+            <h2>Sign up</h2>
+            <label for="firstName">First name</label>
+            <input class="input" required name="firstName" id="firstName" type="text">
+
+            <label for="lastName">Last Name</label>
+            <input class="input" required name="lastName" id="lastName" type="text">
+
+            <label for="userName">Username</label>
+            <input class="input" required name="userName" id="userName" type="text">
+
+            <label for="password">Password</label>
+            <input class="input" required name="password" id="password" type="password">
+
+              <%-include('../partials/errors')%>
+            <button class="button button--submit">Submit</button>
+        </form>
