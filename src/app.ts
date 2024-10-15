@@ -10,7 +10,7 @@ import connectPgSimple from "connect-pg-simple";
 import {pool} from "./db/pool.js";
 import passport from "passport";
 import {getUserById} from "./db/user-queries.js";
-import {User as UserT} from "./types/user-types.js";
+import {User as UserT, UserRoles} from "./types/user-types.js";
 import signInRouter from "./routes/sign-in-router.js";
 import passportConfig from "./configs/passport-config.js";
 import signOutRouter from "./routes/sign-out-router.js";
@@ -66,6 +66,7 @@ passport.deserializeUser(async (userId: number, done) => {
 app.use(passport.session());
 app.use((req, res, next) => {
     res.locals.isLogged = !!req.user;
+    res.locals.isAuthorized = req.user?.role === UserRoles.MEMBER || req.user?.role === UserRoles.ADMIN;
     next();
 });
 
