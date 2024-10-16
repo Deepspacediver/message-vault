@@ -16,6 +16,7 @@ import passportConfig from "./configs/passport-config.js";
 import signOutRouter from "./routes/sign-out-router.js";
 import roleRouter from "./routes/role-router.js";
 import indexRouter from "./routes/index-router.js";
+import createPostRouter from "./routes/create-post-router.js";
 
 declare global {
     namespace Express {
@@ -80,6 +81,7 @@ app.use('/sign-in', signInRouter);
 app.use("/sign-out", signOutRouter);
 app.use("/users", userRouter);
 app.use("/role", roleRouter);
+app.use("/create-post", createPostRouter);
 
 app.use(errorMiddleware);
 
