@@ -2,7 +2,7 @@
     <h2>Change role</h2>
 
     <label for="role">Choose role</label>
-    <select name="role" id="role">
+    <select class="select" name="role" id="role">
      <%if(locals.user?.role !== 'admin'){%>
           <option value="admin">Admin</option>
           <%}%>
