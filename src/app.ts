@@ -14,6 +14,8 @@ import {User as UserT, UserRoles} from "./types/user-types.js";
 import signInRouter from "./routes/sign-in-router.js";
 import passportConfig from "./configs/passport-config.js";
 import signOutRouter from "./routes/sign-out-router.js";
+import roleRouter from "./routes/role-router.js";
+import indexRouter from "./routes/index-router.js";
 
 declare global {
     namespace Express {
@@ -65,15 +67,19 @@ passport.deserializeUser(async (userId: number, done) => {
 
 app.use(passport.session());
 app.use((req, res, next) => {
+    res.locals.user = req.user;
     res.locals.isLogged = !!req.user;
     res.locals.isAuthorized = req.user?.role === UserRoles.MEMBER || req.user?.role === UserRoles.ADMIN;
     next();
 });
 
+
+app.use('/', indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use('/sign-in', signInRouter);
 app.use("/sign-out", signOutRouter);
 app.use("/users", userRouter);
+app.use("/role", roleRouter);
 
 app.use(errorMiddleware);
 

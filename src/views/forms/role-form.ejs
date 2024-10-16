@@ -1,0 +1,20 @@
+<form class="form " method="POST" action="/role">
+    <h2>Change role</h2>
+
+    <label for="role">Choose role</label>
+    <select class="select" name="role" id="role">
+     <%if(locals.user?.role !== 'admin'){%>
+          <option value="admin">Admin</option>
+          <%}%>
+     <%if(locals.user?.role !== 'member'){%>
+        <option value="member">Member</option>
+      <%}%>
+    </select>
+
+    <label for="password">Secret password</label>
+    <input class="input" required name="password" id="password" type="password">
+
+
+    <%-include('../partials/errors')%>
+    <button class="button button--submit">Submit</button>
+</form>
