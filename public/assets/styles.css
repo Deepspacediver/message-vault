@@ -148,6 +148,23 @@ a {
     margin: 10px 0;
 }
 
+.unauthorized-page {
+    width: 100%;
+    font-size: 1.3rem;
+    display: grid;
+    gap: 5px;
+}
+
+.unauthorized-page__heading {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.unauthorized-page__link {
+    text-decoration: underline;
+
+}
+
 /*~~~~~~~~ FOOTER ~~~~~~~~*/
 /*footer {*/
 /*    margin-top: auto;*/

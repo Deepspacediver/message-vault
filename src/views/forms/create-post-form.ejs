@@ -1,0 +1,10 @@
+    <form class="form sign-in-form__form" method="POST" action="/create-post">
+        <h2>Create post</h2>
+        <label class="label" for="title">Title</label>
+        <input class="input" required name="title" id="title" type="text">
+        <label class="label" for="content">Content</label>
+        <textarea class="textarea" rows="10" required name="content" id="content"></textarea>
+        <%-include('../partials/errors')%>
+        <button class="button button--submit">Sign in</button>
+    </form>
+

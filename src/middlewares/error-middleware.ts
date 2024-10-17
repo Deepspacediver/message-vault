@@ -7,7 +7,6 @@ export const getZodErrorMessages = (zodIssues: ZodIssue[]) => {
 };
 
 export const errorMiddleware: ErrorRequestHandler = (err, _req, res, next) => {
-
     if (err instanceof BadRequestError) {
         res.render(err.viewFilePath, {errors: err.errors});
         return next();

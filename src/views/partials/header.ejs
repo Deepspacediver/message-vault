@@ -10,9 +10,8 @@
                 </a>
             </li>
         <% if(locals.isLogged) {%>
-            <% if(locals.isAuthorized) {%>
                  <li>
-                     <a href="">
+                     <a href="/create-post">
                           Create post
                       </a>
                  </li>
@@ -21,13 +20,6 @@
                         Change role
                       </a>
                  </li>
-            <%} else {%>
-                 <li>
-                      <a href="/role">
-                        Change role
-                       </a>
-                 </li>
-            <%}%>
             <li class="header__list-item">
                 <a href="/sign-out">
                     Sign out
