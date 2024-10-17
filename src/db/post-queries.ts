@@ -24,5 +24,8 @@ export const getPostsForMemberAndAdmin = async (): Promise<Post[]> => {
                                     CONCAT(users.first_name, ' ', users.last_name) AS user_full_name
                                     FROM posts JOIN users_posts AS rel ON posts.post_id = rel.post_id 
                                     JOIN users ON users.user_id = rel.user_id ORDER BY posts.created_at`);
-    return rows;
+    return rows.map((post) => ({
+        ...post,
+        created_at: new Date(post.created_at).toLocaleString()
+    }));
 };
