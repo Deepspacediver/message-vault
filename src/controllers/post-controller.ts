@@ -28,6 +28,9 @@ export const createPostPOST = asyncHandler(async (req, res) => {
 });
 
 export const getPostsGET = asyncHandler(async (req, res) => {
+    if (!req.user) {
+        return res.render('pages/index');
+    }
     const result = schemaRequestParser(GetPostsSchema, req);
     if (!result.success) {
         const errorMessages = getZodErrorMessages(result.error.issues);
