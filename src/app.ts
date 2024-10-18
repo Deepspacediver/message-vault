@@ -71,19 +71,19 @@ app.use(passport.session());
 app.use((req, res, next) => {
     res.locals.user = req.user;
     res.locals.isLogged = !!req.user;
-    res.locals.isAuthorized = req.user?.role === UserRoles.MEMBER || req.user?.role === UserRoles.ADMIN;
+    res.locals.isAdmin = req.user?.role === UserRoles.ADMIN;
     next();
 });
 
 
-app.use('/', indexRouter);
 app.use("/sign-up", signUpRouter);
-app.use('/sign-in', signInRouter);
+app.use("/sign-in", signInRouter);
 app.use("/sign-out", signOutRouter);
 app.use("/users", userRouter);
 app.use("/role", roleRouter);
 app.use("/create-post", createPostRouter);
 app.use("/error", errorRouter);
+app.use("", indexRouter);
 
 app.use(errorMiddleware);
 
