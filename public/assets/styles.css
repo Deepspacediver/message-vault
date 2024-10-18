@@ -19,7 +19,7 @@
 
     :root {
         --link-size: 1rem;
-        --h1-size: 1.7rem;
+        --h1-size: 1.8rem;
         --h2-size: 1.4rem;
     }
 }
@@ -200,7 +200,7 @@ a {
 
 .unauthorized-page__heading {
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: var(--h2-size);
 }
 
 .unauthorized-page__link {
