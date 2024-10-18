@@ -191,8 +191,11 @@ a {
     margin: 10px 0;
 }
 
-.unauthorized-page {
+.generic-error, .unauthorized-page {
     width: 100%;
+}
+
+.unauthorized-page {
     font-size: 1.3rem;
     display: grid;
     gap: 5px;
