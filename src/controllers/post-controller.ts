@@ -23,7 +23,6 @@ export const createPostPOST = asyncHandler(async (req, res) => {
     const userId = req.user?.user_id as number;
     await createPost({userId, content, title});
 
-    //TODO change redirect to /posts
     res.redirect("/");
 });
 
