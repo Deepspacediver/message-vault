@@ -20,3 +20,13 @@ export const GetPostsSchema = z.object({
         role: z.nativeEnum(UserRoles, {message: "You need to be logged in to see posts"})
     })
 });
+
+export const DeletePostSchema = z.object({
+    user: z.object({
+        role: z.literal(UserRoles.ADMIN
+        )
+    }),
+    params: z.object({
+        postId: z.coerce.number({message: "Post id must be a number"})
+    })
+});
