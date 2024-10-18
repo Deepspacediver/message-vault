@@ -5,34 +5,34 @@
     <nav class="header__nav">
         <ul class="header__list">
              <li>
-                <a href="/">
+                <a class="header__nav-link" href="/">
                     Home
                 </a>
             </li>
         <% if(locals.isLogged) {%>
                  <li>
-                     <a href="/create-post">
+                     <a class="header__nav-link" href="/create-post">
                           Create post
                       </a>
                  </li>
                  <li>
-                      <a href="/role">
+                      <a class="header__nav-link" href="/role">
                         Change role
                       </a>
                  </li>
             <li class="header__list-item">
-                <a href="/sign-out">
+                <a class="header__nav-link" href="/sign-out">
                     Sign out
                 </a>
             </li>
         <%} else {%>
             <li class="header__list-item">
-                <a href="/sign-in">
+                <a class="header__nav-link" href="/sign-in">
                     Sign in
                 </a>
             </li>
             <li>
-                <a href="/sign-up">
+                <a class="header__nav-link" href="/sign-up">
                     Sign up
                 </a>
             </li>

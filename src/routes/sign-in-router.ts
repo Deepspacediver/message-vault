@@ -10,6 +10,9 @@ declare module 'express-session' {
 const signInRouter = Router();
 
 signInRouter.get('/', (req, res) => {
+    if (!!req.user) {
+        return res.redirect('/');
+    }
     const messages = req?.session?.messages ?? null;
     req.session.messages = [];
     res.render('forms/sign-in-form', {errors: messages});
