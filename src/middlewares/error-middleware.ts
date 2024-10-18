@@ -12,7 +12,6 @@ export const errorMiddleware: ErrorRequestHandler = (err, _req, res, next) => {
         return next();
     }
 
-    //TODO: add error page
-    res.status(500).json({error: 'Internal Server Error'});
+    res.redirect('/errors/generic');
     next();
 };
