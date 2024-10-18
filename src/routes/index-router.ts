@@ -1,8 +1,8 @@
 import {Router} from "express";
-import {getPostsGET} from "../controllers/post-controller.js";
+import {deletePostDETELE, getPostsGET} from "../controllers/post-controller.js";
 
 const indexRouter = Router();
 
-indexRouter.get('/', getPostsGET);
+indexRouter.get('/', getPostsGET).get('/:postId', deletePostDETELE);
 
 export default indexRouter;

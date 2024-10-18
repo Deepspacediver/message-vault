@@ -29,3 +29,8 @@ export const getPostsForMemberAndAdmin = async (): Promise<Post[]> => {
         created_at: new Date(post.created_at).toLocaleString()
     }));
 };
+
+export const deletePost = async (postId: number) => {
+        await db.query('DELETE FROM posts WHERE post_id =$1', [postId]);
+    }
+;

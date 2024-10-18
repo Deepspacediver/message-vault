@@ -1,9 +1,14 @@
 import asyncHandler from "express-async-handler";
 import {schemaRequestParser} from "../helpers/schema-parse.js";
-import {CreatePostSchema, GetPostsSchema} from "../schemas/post-schemas.js";
+import {CreatePostSchema, DeletePostSchema, GetPostsSchema} from "../schemas/post-schemas.js";
 import {getZodErrorMessages} from "../middlewares/error-middleware.js";
 import BadRequestError from "../partials/bad-request-error.js";
-import {createPost, getPostsForMemberAndAdmin, getPostsForUser} from "../db/post-queries.js";
+import {
+    createPost,
+    deletePost,
+    getPostsForMemberAndAdmin,
+    getPostsForUser
+} from "../db/post-queries.js";
 import {UserRoles} from "../types/user-types.js";
 
 
@@ -32,4 +37,16 @@ export const getPostsGET = asyncHandler(async (req, res) => {
     const hasUserRole = req.user?.role === UserRoles.USER;
     const posts = hasUserRole ? await getPostsForUser() : await getPostsForMemberAndAdmin();
     res.render('pages/index', {posts});
+});
+
+export const deletePostDETELE = asyncHandler(async (req, res) => {
+    const result = schemaRequestParser(DeletePostSchema, req);
+    if (!result.success) {
+        const errorMessages = getZodErrorMessages(result.error.issues);
+        throw new BadRequestError("Bad request", errorMessages,
+            'pages/index');
+    }
+    const {postId} = req.params;
+    await deletePost(+postId);
+    res.redirect('/');
 });
