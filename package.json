@@ -8,7 +8,8 @@
     "dev": "tsc --watch & node dist/db/populate-db.js & node --watch dist/app.js",
     "populate": "tsc & node dist/db/populate-db.js",
     "compile": "tsc --watch",
-    "start": "node --watch dist/app.js"
+    "start": "node --watch dist/app.js",
+    "serve": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
