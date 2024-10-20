@@ -37,7 +37,7 @@ app.set("view engine", "ejs");
 console.log(__dirname, "dirname here");
 app.set("views", path.join(__dirname, "../src/views"));
 app.use(expressLayouts);
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname ?? "/app/", "../public")));
 
 const pgSession = connectPgSimple(expressSession);
 
