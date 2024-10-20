@@ -34,10 +34,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 app.set("view engine", "ejs");
-console.log(__dirname, "dirname here");
-app.set("views", path.join(__dirname, "../src/views"));
+const dirname = __dirname ?? "/app/";
+app.set("views", path.join(dirname, "../src/views"));
 app.use(expressLayouts);
-app.use(express.static(path.join(__dirname ?? "/app/", "../public")));
+app.use(express.static(path.join(dirname, "../public")));
 
 const pgSession = connectPgSimple(expressSession);
 
