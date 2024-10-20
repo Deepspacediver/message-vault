@@ -35,6 +35,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.set("view engine", "ejs");
 const dirname = __dirname ?? "/app/";
+console.log(__dirname);
 app.set("views", path.join(dirname, "../src/views"));
 app.use(expressLayouts);
 app.use(express.static(path.join(dirname, "../public")));

@@ -15,6 +15,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "engines": {
+    "node": "22.7.0"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/connect-pg-simple": "^7.0.3",
