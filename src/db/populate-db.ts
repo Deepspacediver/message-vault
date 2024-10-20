@@ -32,7 +32,6 @@ async function main() {
     const client = new Client({
         connectionString: process.env.DB_URL
     });
-    console.log("invoked");
     try {
         await client.connect();
         await client.query(SQL);
