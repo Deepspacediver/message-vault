@@ -12,6 +12,6 @@ export const errorMiddleware: ErrorRequestHandler = (err, _req, res, next) => {
         return next();
     }
 
-    res.redirect('/errors/generic');
+    res.redirect('/error/generic');
     next();
 };

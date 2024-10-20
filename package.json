@@ -6,15 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch & node dist/db/populate-db.js & node --watch dist/app.js",
-    "populate": "tsc && node dist/db/populate-db.js",
-    "compile": "tsc --watch",
+    "compileWatch": "tsc --watch",
     "start": "node --watch dist/app.js",
-    "serve": "node dist/app.js"
+    "compile": "tsc",
+    "serve": "node dist/db/populate-db.js && node dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "engines": {
+    "node": "22.7.0"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/connect-pg-simple": "^7.0.3",
