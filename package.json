@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch & node dist/db/populate-db.js & node --watch dist/app.js",
-    "populate": "tsc",
-    "compile": "tsc --watch",
+    "compileWatch": "tsc --watch",
     "start": "node --watch dist/app.js",
+    "compile": "tsc",
     "serve": "node dist/db/populate-db.js && node dist/app.js"
   },
   "keywords": [],
